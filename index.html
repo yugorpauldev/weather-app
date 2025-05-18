@@ -12,15 +12,35 @@
         <h1> My workout App</h1>
     </header>
     <main>
-        <section id="Exercise List">
+        <section id="exercise-list">
                 <label for="myExercise">Choose an Exercise:</label>
-                    <select id="MyExercise">
+                    <select id="myExercise">
                         <option value="Squat">Squat</option>
                         <option value="Deadlifts">Deadlift</option>
                         <option value="PullUp">PullUp</option>
                     </select>
+                
 
         </section>
+        <section id="RepSet">
+                <label for="Sets">Choose the amount of sets</label> 
+                <input
+                    type="number"
+                    id="sets"
+                    class = "sets"
+                    name="sets"
+                    required
+                    size="5"/>
+                <label for="reps">Choose the amout of reps</label>
+                <input
+                    type="number"
+                    id="reps"
+                    class = "reps"
+                    name="reps"
+                    required
+                    size="5"/>
+        </section>
+
         <button id="logButton">Log Exercise</button>
 
         <section id="log-area">
