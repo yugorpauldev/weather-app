@@ -1,8 +1,8 @@
 const dropdown = document.querySelector("#myExercise");
 const logButton = document.querySelector("#logButton");
 const logList = document.querySelector("#log-list");
-const sets = document.querySelector(".sets")
-const reps = document.querySelector(".reps")
+const sets = document.querySelector(".sets");
+const reps = document.querySelector(".reps");
 
 
 
@@ -28,7 +28,31 @@ function displayWorkouts(){
         })
     }
 
+function filterDate(){
+    const weekWorkouts = [];
+    const today = new Date();
+
+    const startofWeek = new Date(today);
+    const endofWeek = new Date(today);
+
+    startofWeek.setDate(today.getDate() - today.getDay());
+    endofWeek.setDate(startofWeek.getDate + 6);
+
+    startOfWeek.setHours(0, 0, 0, 0);
+    endOfWeek.setHours(0, 0, 0, 0);
+
+    workouts.forEach(item => {
+        const date = new Date(item.tempo);
+        date.setHours(0, 0, 0, 0);
+
+        if (date >= startOfWeek && date <= endOfWeek){
+            weekWorkouts.push(item)
+        }
+        return weekWorkouts
+    });
     
+
+}
     
 }
 displayWorkouts();
